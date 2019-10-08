@@ -1,0 +1,72 @@
+tags = {
+  "customer" = "acmeinc"
+  "application" = "test"
+  "ttl" = "0"
+  "project" = "demo"
+  "dept" = "success"
+  "contact" = "me@mail.io"
+  "prefix" = "myname"
+}
+
+aws_region=""
+aws_profile=""
+aws_creds_file=""
+key_name = ""
+aws_azs = []
+
+chef_server_count = 3
+chef_automate_count = 0
+chef_supermarket_count = 0
+
+chef_frontend_config = <<-EOF
+
+rabbitmq['queue_length_monitor_enabled'] = false
+EOF
+
+# you can ignore these if you dont want to set up ssl certs in letsencrypt
+# and if you dont want you nodes in dnsimple
+dnsimple_account = ""
+dnsimple_oauth_token = ""
+dnsimple_domain_name = ""
+issuer_url = "https://acme-staging-v02.api.letsencrypt.org/directory"
+# issuer_url = "https://acme-v02.api.letsencrypt.org/directory"
+force_frontend_chef_run = "default-2"
+
+create_ssh_user = true
+ssh_user_name = ""
+ssh_user_pass = ""
+ssh_user_public_key = ""
+ssh_user_private_key = ""
+
+chef_server_hostname = "chef-nyc100"
+chef_supermarket_hostname = "supermarket-nyc100"
+chef_automate_hostname = "automate-nyc100"
+
+chef_server_users = {
+  "jdoe" = {
+    "serveradmin" = true,
+    "first_name"  = "Jane",
+    "last_name"   = "Doe",
+    "email"       = "jdoe@company.com"
+    "password"    = "P@55w0rd1"
+  }
+}
+chef_server_orgs = {
+  "acmecorp" = {
+    "admins" = ["jdoe"],
+    "org_full_name" = "My Company"
+  }
+}
+
+
+chef_automate_license = ""
+
+data_collector_token = "mydatacollectortoken"
+
+chef_automate_admin_password = "P@55w0rd1"
+
+postgresql_superuser_password = "lwdbOsU+Dh8fKcCbkgpoAGwQBUOQGJ/agCLR7c/wV/2Xw+d/fpgGXdQU4YT3vvoL"
+postgresql_replication_password = "oH4zQoXcYnk6r4hq5yeuLDrT0lkR5n8KUq0KLikMGhcPmfgFMSYN3ExsPnUhtVlz"
+etcd_initial_cluster_token = "chef-backend-etcd-cluster-1"
+elasticsearch_cluster_name = "chef-backend-elasticsearch-cluster"
+timeout = "10m"
